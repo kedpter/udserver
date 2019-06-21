@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+html	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^<html>$/;"	function	line:2
+head	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^<head>$/;"	function	line:3
+meta	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^	<meta charset="UTF-8">$/;"	function	line:4
+title	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^	<title> ud service<\/title>$/;"	function	line:5
+link	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^	<link href="css\/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">$/;"	function	line:7
+script	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^	<script src="js\/jquery-1.11.1.min.js"><\/script>$/;"	function	line:10
+script	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^	<script src="js\/bootstrap.min.js"><\/script>$/;"	function	line:11
+script	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^	<script src="js\/upload.js"><\/script>$/;"	function	line:13
+style	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^    <style media="screen">$/;"	function	line:14
+body	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^<body>$/;"	function	line:20
+div	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^<div class="container">$/;"	function	line:21
+div	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^	<div class="panel panel-default">$/;"	function	line:23
+div	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^		<div class="panel-heading"><strong>Download Files<\/strong>$/;"	function	line:24
+small	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^			<small>utk<\/small>$/;"	function	line:25
+div	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^		<div class="panel-body">$/;"	function	line:28
+div	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^			<div class="row">$/;"	function	line:29
+ul	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^				<ul>$/;"	function	line:30
+li	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^					<li><a href="\/storage\/{{ file }}" download>{{ file }}<\/a><\/li>$/;"	function	line:32
+div	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^			<div class="row">$/;"	function	line:36
+button	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^				<button type="button" class="btn btn-success btn-block" id="clean-btn">Clean<\/button>$/;"	function	line:37
+div	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^	<div class="panel panel-default">$/;"	function	line:43
+div	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^		<div class="panel-heading"><strong>Upload Files<\/strong>$/;"	function	line:44
+small	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^			<small>utk<\/small>$/;"	function	line:45
+div	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^		<div class="panel-body">$/;"	function	line:47
+h	/Users/kedpter/KHome/WorkStation/Proj/udserver/src/udserver/templates/index.html	/^			<h4>Drag and drop files below<\/h4>$/;"	function	line:49

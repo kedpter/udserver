@@ -3,13 +3,15 @@
 
 from __future__ import print_function
 import os
-from flask import Flask, request, render_template, send_from_directory, jsonify
+from flask import Flask, request, render_template, send_from_directory, jsonify, send_file
 from flask_dropzone import Dropzone
 import glob
 import sys
 import socket
 import logging
 import pkg_resources
+import argparse
+import configparser
 
 package_name = 'udserver'
 # root = os.path.dirname(pkg_resources.resource_filename(package_name, __file__))
@@ -21,9 +23,18 @@ app = Flask(__name__, static_folder='public', static_url_path='')
 cfgfile = pkg_resources.resource_filename(package_name, 'config.cfg')
 app.config.from_pyfile(cfgfile)
 
+app.config.update(
+    # Flask-Dropzone config:
+    DROPZONE_MAX_FILE_SIZE=1024,  # set max size limit to a large number, here is 1024 MB
+    DROPZONE_TIMEOUT=5 * 60 * 1000  # set upload timeout to a large number, here is 5 minutes
+)
+
 dropzone = Dropzone(app)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
+
+if not os.path.isdir(app.config['STORAGE_FOLDER']):
+    os.makedirs(app.config['STORAGE_FOLDER'])
 
 
 @app.route('/favicon.ico')
@@ -36,10 +47,11 @@ def favicon():
 
 @app.route('/storage/<path:filename>')
 def custom_static(filename):
-    return send_from_directory(
-        #  app.config['STORAGE_FOLDER'], filename, attachment=True)
-        app.config['STORAGE_FOLDER'],
-        filename)
+    return send_file(os.path.join(app.config['STORAGE_FOLDER'], filename), as_attachment=True)
+    # return send_from_directory(
+    #     #  app.config['STORAGE_FOLDER'], filename, attachment=True)
+    #     app.config['STORAGE_FOLDER'],
+    #     filename, as_attachment=True)
 
 
 @app.route('/')
@@ -54,8 +66,10 @@ def root():
 
 @app.route('/uploads', methods=['GET', 'POST'])
 def upload():
+    logger.info('triggered')
     if request.method == 'POST':
         files = request.files.getlist('file')
+        logger.info(files)
         if files:
             for f in files:
                 f.save(os.path.join(app.config['STORAGE_FOLDER'], f.filename))
@@ -99,9 +113,10 @@ def show_localip():
 
 
 if __name__ == '__main__':
-    #  app.run(host='0.0.0.0')
     show_localip()
+    print('****************')
     app.run(host='0.0.0.0', debug=True)
+
     #  handler = RotatingFileHandler(log_fpath, maxBytes=10000, backupCount=1)
     #  handler.setLevel(logging.INFO)
     #  app.logger.setLevel(logging.INFO)

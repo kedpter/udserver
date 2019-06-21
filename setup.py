@@ -15,7 +15,7 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     'Click>=6.0', 'autoflake>=1.2', 'flake8>=3.5.0', 'pytest>=3.6.2',
-    'twine>=1.11.0', 'yapf>=0.22.0', 'Flask==1.0.2', 'Flask-Dropzone'
+    'twine>=1.11.0', 'yapf>=0.22.0', 'Flask==1.0.2', 'Flask-Dropzone==1.5.3'
 ]
 
 setup_requirements = []
@@ -62,7 +62,7 @@ setup(
     package_dir={"": "src"},
     packages=find_packages(
         where="src",
-        exclude=["contrib", "docs", "tests*", "tasks"],
+        exclude=["contrib", "docs", "tests*", "tasks", "udserver/storage/*"],
     ),
     # package_data={'yourpackage': ['*.txt', 'path/to/resources/*.txt']},
     description=

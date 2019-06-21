@@ -38,6 +38,7 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	$(BROWSER) docs/html/index.html
 
 clean: clean-build clean-pyc offline-clean binary-clean
+	python setup.py clean --all
 
 clean-build: ## remove build artifacts
 	rm -fr build/

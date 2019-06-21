@@ -3,12 +3,16 @@
 import sys
 import click
 from udserver import udserver
+import os
 
 
 @click.command()
-def main(args=None):
+@click.option(
+    '--storage', '-s', type=click.Path(exists=True), help='set storage folder')
+def main(storage):
+    udserver.app.config['STORAGE_FOLDER'] = os.path.abspath(storage)
     udserver.show_localip()
-    udserver.app.run(host='0.0.0.0', debug=False)
+    udserver.app.run(host='0.0.0.0', debug=True)
     return 0
 
 
