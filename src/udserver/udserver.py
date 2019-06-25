@@ -18,15 +18,19 @@ package_name = 'udserver'
 # sys.path.insert(0, root)
 # print(sys.path)
 
+
 app = Flask(__name__, static_folder='public', static_url_path='')
 # app.config.from_object('config.ProductionConfig')
 cfgfile = pkg_resources.resource_filename(package_name, 'config.cfg')
 app.config.from_pyfile(cfgfile)
+if not os.path.isdir(app.config['STORAGE_FOLDER']):
+    os.mkdir(app.config['STORAGE_FOLDER'])
 
 app.config.update(
     # Flask-Dropzone config:
     DROPZONE_MAX_FILE_SIZE=1024,  # set max size limit to a large number, here is 1024 MB
-    DROPZONE_TIMEOUT=5 * 60 * 1000  # set upload timeout to a large number, here is 5 minutes
+    # set upload timeout to a large number, here is 5 minutes
+    DROPZONE_TIMEOUT=5 * 60 * 1000
 )
 
 dropzone = Dropzone(app)

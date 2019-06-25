@@ -3,4 +3,4 @@
 
 __author__ = """Qifan Xin"""
 __email__ = '790476448@qq.com'
-__version__ = '0.1.3'
+__version__ = '0.1.5'
