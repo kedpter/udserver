@@ -108,5 +108,6 @@ deps
 docs
 
 src/udserver/storage/
+!src/udserver/storage/test.txt
 
 .tags*
