@@ -17,7 +17,7 @@ $(document).ready(function () {
 	});
 
 
-	Dropzone.options.filedrop = {
+	Dropzone.options.myDropzone = {
 		init: function () {
 			this.on("complete", function (file) {
 				if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {

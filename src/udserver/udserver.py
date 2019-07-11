@@ -30,7 +30,9 @@ app.config.update(
     # Flask-Dropzone config:
     DROPZONE_MAX_FILE_SIZE=1024,  # set max size limit to a large number, here is 1024 MB
     # set upload timeout to a large number, here is 5 minutes
-    DROPZONE_TIMEOUT=5 * 60 * 1000
+    DROPZONE_TIMEOUT=5 * 60 * 1000,
+    # DROPZONE_ALLOWED_FILE_CUSTOM=True,
+    DROPZONE_ALLOWED_FILE_TYPE='default'
 )
 
 dropzone = Dropzone(app)
